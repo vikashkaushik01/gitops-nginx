@@ -16,14 +16,14 @@ spec:
     spec:
       containers:
       - name: container-one
-        image: nginx:1.21.0   # Updated image
+        image: nginx:1.19.3
         ports:
         - containerPort: 80
       - name: container-two
-        image: redis:6.2.1    # Updated image
+        image: redis:6.0.9
         ports:
         - containerPort: 6379
       - name: container-three
-        image: alpine:3.13    # Updated image
+        image: busybox:1.32
         command: ["sleep", "3600"]
 
