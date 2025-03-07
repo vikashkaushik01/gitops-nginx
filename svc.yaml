@@ -15,7 +15,7 @@ spec:
       port: 6379
       targetPort: 6379
     - name: alpine-port
-      port: 8080  # Can be any port, since the Alpine container is sleeping
+      port: 8082  # Can be any port, since the Alpine container is sleeping
       targetPort: 8080
   type: ClusterIP
 

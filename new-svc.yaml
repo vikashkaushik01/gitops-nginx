@@ -15,7 +15,7 @@ spec:
     - name: solr-port
       port: 8983
       protocol: TCP
-      targetPort: 8983
+      targetPort: 8984
   selector:
     environment: dev
     nibr-app-name: cat-solr

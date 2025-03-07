@@ -16,7 +16,7 @@ spec:
     spec:
       containers:
       - name: container-one
-        image: nginx:1.21.0   # Updated image
+        image: nginx:latest   # Updated image
         ports:
         - containerPort: 80
       - name: container-two
