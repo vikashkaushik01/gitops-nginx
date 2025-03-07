@@ -1,0 +1,65 @@
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    gitopsurl: https://bitbucketenterprise.aws.novartis.net/projects/CAT/repos/cat-app-zephyr-deploy/browse
+  labels:
+    environment: dev
+    nibr-app-name: cat-solr
+  name: cat-solr-dev-1
+spec:
+  externalIPs: []
+  healthCheckNodePort: 0
+  loadBalancerSourceRanges: []
+  ports:
+    - name: solr-port
+      port: 8983
+      protocol: TCP
+      targetPort: 8983
+  selector:
+    environment: dev
+    nibr-app-name: cat-solr
+  type: ClusterIP
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    gitopsurl: https://bitbucketenterprise.aws.novartis.net/projects/CAT/repos/cat-app-zephyr-deploy/browse
+  labels:
+    environment: dev
+    nibr-app-name: cs-cke-redis
+  name: cs-cke-redis-dev-1
+spec:
+  ports:
+    - name: redis
+      port: 6379
+      protocol: TCP
+      targetPort: 6379
+  selector:
+    environment: dev
+    nibr-app-name: cs-cke-redis
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    gitopsurl: https://bitbucketenterprise.aws.novartis.net/projects/CAT/repos/cat-app-zephyr-deploy/browse
+  labels:
+    environment: dev
+    nibr-app-name: cs-cke-server
+  name: cs-cke-server-dev-1
+spec:
+  externalIPs: []
+  healthCheckNodePort: 0
+  loadBalancerSourceRanges: []
+  ports:
+    - name: cs-cke-server
+      port: 8080
+      protocol: TCP
+      targetPort: 8080
+  selector:
+    environment: dev
+    nibr-app-name: cs-cke-server
+  type: ClusterIP
+
